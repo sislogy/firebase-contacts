@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "public": "./dist/firebase-contacts/browser/",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
