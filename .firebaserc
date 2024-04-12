@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "fir-contacts-20a2d"
+  },
+  "targets": {
+    "fir-contacts-20a2d": {
+      "hosting": {
+        "firebase-contacts": [
+          "fir-contacts-20a2d"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -1,4 +1,4 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import {
   provideRouter,
   withComponentInputBinding,
@@ -7,10 +7,12 @@ import {
 
 import { routes } from './app.routes';
 import { firebaseProviders } from './firebase.config';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withViewTransitions(), withComponentInputBinding()),
+    importProvidersFrom([provideAuth(() => getAuth())]),
     firebaseProviders,
   ],
 };

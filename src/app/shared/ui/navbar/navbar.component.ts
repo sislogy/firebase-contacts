@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { IconContact } from '../icons/contact';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,8 +15,22 @@ import { IconContact } from '../icons/contact';
           <p>Contacts</p>
         </a>
       </div>
+      <div>
+        <button (click)="login()">LOGIN</button>
+      </div>
     </nav>
   `,
   imports: [IconContact, RouterLink],
+  providers: [UserService]
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  private readonly userService = inject(UserService);
+
+  login(){
+    this.userService.login().then( res => {
+      console.log(res);
+    })
+    .catch(err => console.error(err));
+  }
+
+}

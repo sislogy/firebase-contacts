@@ -94,6 +94,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "firebase-contacts:build:production",
+              "serveTarget": "firebase-contacts:serve:production"
+            },
+            "development": {
+              "buildTarget": "firebase-contacts:build:development",
+              "serveTarget": "firebase-contacts:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
